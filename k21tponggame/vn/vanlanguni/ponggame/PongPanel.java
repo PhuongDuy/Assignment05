@@ -185,7 +185,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 
 					// If the ball hitting the paddle, it will bounce back
 					// FIXME Something wrong here
-					ballDeltaX *= 1;
+					ballDeltaX *= -1;
 				}
 			}
 
@@ -212,6 +212,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			g.drawString("Pong Game", 130, 100);
 
 			// FIXME Wellcome message below show smaller than game title
+			g.setFont(new Font(Font.DIALOG, Font.BOLD, 28));
 			g.drawString("Press 'P' to play.", 175, 400);
 		} else if (playing) {
 

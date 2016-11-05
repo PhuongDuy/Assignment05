@@ -239,7 +239,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 																	// score
 
 			// draw the ball
-			g.setColor(Color.BLUE);
+			g.setColor(Color.RED);
 			g.fillOval(ballX, ballY, diameter, diameter);
 
 			// draw the paddles
@@ -251,7 +251,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 
 			// Draw scores
 			// TODO Set Blue color
-			g.setColor(Color.Blue);
+			g.setColor(Color.blue);
 			g.setFont(new Font(Font.DIALOG, Font.BOLD, 36));
 			g.drawString(String.valueOf(playerOneScore), 100, 100);
 			g.drawString(String.valueOf(playerTwoScore), 350, 100);

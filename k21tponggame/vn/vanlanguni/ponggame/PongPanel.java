@@ -239,7 +239,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			g.drawString(String.valueOf(playerOneScore), 350, 100); // Player 2
 																	// score
 
-			// draw the ball
+			// draw the ball 123
 			g.setColor(Color.RED);
 			g.fillOval(ballX, ballY, diameter, diameter);
 
@@ -268,7 +268,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			// Draw Restart message
 			g.setFont(new Font(Font.DIALOG, Font.BOLD, 18));
 			// TODO Draw a restart message
-			g.drawString("Press 'Space' to resetart", 200, 400);
+			g.drawString("Press 'Space' to restart", 200, 400);
 		}
 	}
 

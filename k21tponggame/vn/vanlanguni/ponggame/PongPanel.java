@@ -15,7 +15,7 @@
  *  
  *  Version: 0.5
  */
-package vanlang;
+package vn.vanlanguni.ponggame;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -102,21 +102,21 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 
 			// move player 1
 			// Move up if after moving, paddle is not outside the screen
-			if (upPressed && playerOneY - paddleSpeed > 0) {
+			if (wPressed && playerOneY - paddleSpeed > 0) {
 				playerOneY -= paddleSpeed;
 			}
 			// Move down if after moving paddle is not outside the screen
-			if (downPressed && playerOneY + playerOneHeight + paddleSpeed < getHeight()) {
+			if (sPressed && playerOneY + playerOneHeight + paddleSpeed < getHeight()) {
 				playerOneY += paddleSpeed;
 			}
 
 			// move player 2
 			// Move up if after moving paddle is not outside the screen
-			if (wPressed && playerTwoY - paddleSpeed > 0) {
+			if (upPressed && playerTwoY - paddleSpeed > 0) {
 				playerTwoY -= paddleSpeed;
 			}
 			// Move down if after moving paddle is not outside the screen
-			if (sPressed && playerTwoY + playerTwoHeight + paddleSpeed < getHeight()) {
+			if (downPressed && playerTwoY + playerTwoHeight + paddleSpeed < getHeight()) {
 				playerTwoY += paddleSpeed;
 			}
 
@@ -213,7 +213,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 
 			// FIXME Wellcome message below show smaller than game title
 			g.setFont(new Font(Font.DIALOG, Font.BOLD, 28));
-			g.drawString("Press 'P' to play.", 130, 230);
+			g.drawString("Press 'p' to play.", 130, 230);
 		} else if (playing) {
 
 			/* Game is playing */
@@ -229,7 +229,6 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			}
 
 			// draw "goal lines" on each side
-			g.setColor(Color.GRAY);
 			g.drawLine(playerOneRight, 0, playerOneRight, getHeight());
 			g.drawLine(playerTwoLeft, 0, playerTwoLeft, getHeight());
 

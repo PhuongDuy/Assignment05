@@ -15,7 +15,7 @@
  *  
  *  Version: 0.5
  */
-package phi123;
+package vanlang;
 
 import java.awt.Color;
 import java.awt.Font;

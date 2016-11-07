@@ -229,7 +229,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			}
 
 			// draw "goal lines" on each side
-			g.setColor(Color.GRAY);
+			g.setColor(Color.GREEN);
 			g.drawLine(playerOneRight, 0, playerOneRight, getHeight());
 			g.drawLine(playerTwoLeft, 0, playerTwoLeft, getHeight());
 

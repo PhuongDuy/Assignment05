@@ -279,7 +279,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 
 	public void keyPressed(KeyEvent e) {
 		if (showTitleScreen) {
-			if (e.getKeyChar() == KeyEvent.VK_P) {
+			if (e.getKeyCode() == KeyEvent.VK_P) {
 				showTitleScreen = false;
 				playing = true;
 			}

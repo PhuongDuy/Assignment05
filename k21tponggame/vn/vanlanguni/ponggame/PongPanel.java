@@ -15,7 +15,7 @@
  *  
  *  Version: 0.5
  */
-package vn.vanlanguni.ponggame;
+package vanlang;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -128,9 +128,9 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			int nextBallLeft = ballX + ballDeltaX;
 			int nextBallRight = ballX + diameter + ballDeltaX;
 			// FIXME Something not quite right here
-			int nextBallTop = ballY;
-			int nextBallBottom = ballY + diameter;
-
+		
+			int nextBallTop = ballY + ballDeltaY;
+			int nextBallBottom = ballY + diameter + ballDeltaY;
 			// Player 1's paddle position
 			int playerOneRight = playerOneX + playerOneWidth;
 			int playerOneTop = playerOneY;
@@ -213,7 +213,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 
 			// FIXME Wellcome message below show smaller than game title
 			g.setFont(new Font(Font.DIALOG, Font.BOLD, 28));
-			g.drawString("Press 'P' to play.", 175, 400);
+			g.drawString("Press 'P' to play.", 130, 230);
 		} else if (playing) {
 
 			/* Game is playing */
@@ -222,7 +222,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			int playerOneRight = playerOneX + playerOneWidth;
 			int playerTwoLeft = playerTwoX;
 
-			// draw dashed line down center
+			// draw dashed line down center1
 			g.setColor(Color.GREEN);
 			for (int lineY = 0; lineY < getHeight(); lineY += 50) {
 				g.drawLine(250, lineY, 250, lineY + 25);

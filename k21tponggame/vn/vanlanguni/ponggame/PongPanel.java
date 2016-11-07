@@ -137,7 +137,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			int playerOneBottom = playerOneY + playerOneHeight;
 
 			// Player 2's paddle position
-			float playerTwoLeft = playerTwoX;
+			float playerTwoLeft = playerTwoX ;
 			float playerTwoTop = playerTwoY;
 			float playerTwoBottom = playerTwoY + playerTwoHeight;
 
@@ -213,7 +213,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 
 			// FIXME Wellcome message below show smaller than game title
 			g.setFont(new Font(Font.DIALOG, Font.BOLD, 28));
-			g.drawString("Press 'P' to play.", 175, 400);
+			g.drawString("Press 'p' to play.", 175, 400);
 		} else if (playing) {
 
 			/* Game is playing */
@@ -229,7 +229,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			}
 
 			// draw "goal lines" on each side
-			g.setColor(Color.GREEN);
+			g.setColor(Color.GRAY);
 			g.drawLine(playerOneRight, 0, playerOneRight, getHeight());
 			g.drawLine(playerTwoLeft, 0, playerTwoLeft, getHeight());
 
@@ -279,7 +279,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 
 	public void keyPressed(KeyEvent e) {
 		if (showTitleScreen) {
-			if (e.getKeyChar() == 'p') {
+			if (e.getKeyCode() == KeyEvent.VK_P) {
 				showTitleScreen = false;
 				playing = true;
 			}

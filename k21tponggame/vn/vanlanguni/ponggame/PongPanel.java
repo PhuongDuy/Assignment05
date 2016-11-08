@@ -50,8 +50,8 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 	private boolean sPressed;
 
 	/** The ball: position, diameter */
-	private int ballX = 200;
-	private int ballY = 200;
+	private int ballX = 0;
+	private int ballY = 300;
 	private int diameter = 20;
 	private int ballDeltaX = -1;
 	private int ballDeltaY = 3;
@@ -78,7 +78,6 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 	/** Construct a PongPanel. */
 	public PongPanel() {
 		setBackground(backgroundColor);
-
 		// listen to key presses
 		setFocusable(true);
 		addKeyListener(this);
@@ -214,8 +213,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 
 			// FIXME Wellcome message below show smaller than game title
 			g.setFont(new Font(Font.DIALOG, Font.BOLD, 28));
-			g.drawString("Press 'p' to play.", 175, 400);
-
+			g.drawString("Press 'p' to play.", 130, 230);
 		} else if (playing) {
 
 			/* Game is playing */
@@ -280,7 +278,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 
 	public void keyPressed(KeyEvent e) {
 		if (showTitleScreen) {
-			if (e.getKeyCode() == KeyEvent.VK_P) {
+			if (e.getKeyChar() == 'p') {
 				showTitleScreen = false;
 				playing = true;
 			}

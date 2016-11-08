@@ -30,7 +30,7 @@ import javax.swing.Timer;
 
 /**
  * 
- * @author Invisible Man
+ * @author Duy Ho
  *
  */
 public class PongPanel extends JPanel implements ActionListener, KeyListener {
@@ -158,8 +158,8 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 						playing = false;
 						gameOver = true;
 					}
-					ballX = 200;
-					ballY = 200;
+					ballX = 240;
+					ballY = 240;
 				} else {
 					// If the ball hitting the paddle, it will bounce back
 					// FIXME Something wrong here
@@ -179,8 +179,8 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 						playing = false;
 						gameOver = true;
 					}
-					ballX = 200;
-					ballY = 200;
+					ballX = 240;
+					ballY = 240;
 				} else {
 
 					// If the ball hitting the paddle, it will bounce back

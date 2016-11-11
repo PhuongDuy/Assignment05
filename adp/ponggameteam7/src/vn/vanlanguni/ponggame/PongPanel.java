@@ -53,7 +53,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 	/** The ball: position, diameter */
 	private int ballX = 240;
 	private int ballY = 240;
-	private int diameter = 25;
+	private int diameter = 20;
 	private int ballDeltaX = -1;
 	private int ballDeltaY = 3;
 
@@ -245,7 +245,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 
 			// draw the ball 123
 			ImageIcon imgBall = new ImageIcon("background/ball.png");
-			g.drawImage(imgBall.getImage(), ballX, ballY, diameter, diameter, null);
+ 			g.drawImage(imgBall.getImage(), ballX, ballY, diameter, diameter, null);
 			//g.setColor(Color.RED);
 			//g.fillOval(ballX, ballY, diameter, diameter);
 

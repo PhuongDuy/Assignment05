@@ -64,7 +64,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 	private int playerOneHeight = 60;
 	
 	/** Player 2's paddle: position and size */
-	private int playerTwoX = 475;
+	private int playerTwoX = 472;
 	private int playerTwoY = 250;
 	private int playerTwoWidth = 10;
 	private int playerTwoHeight = 60;
@@ -232,6 +232,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			}
 
 			// draw "goal lines" on each side
+			
 			g.drawLine(playerOneRight, 0, playerOneRight, getHeight());
 			g.drawLine(playerTwoLeft, 0, playerTwoLeft, getHeight());
 
@@ -250,8 +251,12 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			//g.fillOval(ballX, ballY, diameter, diameter);
 
 			// draw the paddles
-			g.fillRect(playerOneX, playerOneY, playerOneWidth, playerOneHeight);
-			g.fillRect(playerTwoX, playerTwoY, playerTwoWidth, playerTwoHeight);
+ 			ImageIcon imgPaddle = new ImageIcon("background/000.png");
+ 			g.drawImage(imgPaddle.getImage(), playerOneX, playerOneY, playerOneWidth, playerOneHeight, null);
+ 			ImageIcon imgPaddle02 = new ImageIcon("background/000.png");
+ 			g.drawImage(imgPaddle.getImage(), 473, playerTwoY, playerTwoWidth, playerTwoHeight, null);
+			//g.fillRect(playerOneX, playerOneY, playerOneWidth, playerOneHeight);
+			//g.fillRect(playerTwoX, playerTwoY, playerTwoWidth, playerTwoHeight);
 		} else if (gameOver) {
 
 			/* Show End game screen with winner name and score */

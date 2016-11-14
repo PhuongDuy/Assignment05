@@ -208,6 +208,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			/* Show welcome screen */
 
 			// Draw game title and start message
+			
 			ImageIcon imgbackground = new ImageIcon("background/hinh-anh-bong-da-3.jpg");
 			g.drawImage(imgbackground.getImage(), 0, 0, 500, 500, null);
 			g.setColor(Color.white);

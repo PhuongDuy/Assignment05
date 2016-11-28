@@ -36,6 +36,8 @@ import javax.swing.Timer;
  */
 public class PongPanel extends JPanel implements ActionListener, KeyListener {
 	private static final long serialVersionUID = -1097341635155021546L;
+	//Sound 
+	Sound StartGame = new Sound();
 
 	private boolean showTitleScreen = true;
 	private boolean playing;
@@ -292,6 +294,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			if (e.getKeyChar() == 'p') {
 				showTitleScreen = false;
 				playing = true;
+				StartGame.play(null);
 			}
 		} else if (playing) {
 			if (e.getKeyCode() == KeyEvent.VK_UP) {

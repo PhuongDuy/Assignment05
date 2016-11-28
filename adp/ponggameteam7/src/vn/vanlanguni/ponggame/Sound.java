@@ -14,7 +14,7 @@ public class Sound {
             public void run() {
                 try {
                     Clip clip = AudioSystem.getClip();
-                    AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(fileName));
+                    AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File("Sound/Intro.wav"));
                     clip.open(inputStream);
                     clip.start(); 
                 } catch (Exception e) {

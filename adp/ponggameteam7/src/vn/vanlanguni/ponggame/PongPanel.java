@@ -37,6 +37,8 @@ import javax.swing.Timer;
  */
 public class PongPanel extends JPanel implements ActionListener, KeyListener {
 	private static final long serialVersionUID = -1097341635155021546L;
+	//Sound 
+	Sound StartGame = new Sound();
 
 	private boolean showTitleScreen = true;
 	private boolean playing;
@@ -54,7 +56,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 	/** The ball: position, diameter */
 	private int ballX = 240;
 	private int ballY = 240;
-	private int diameter = 20;
+	private int diameter = 30;
 	private int ballDeltaX = -1;
 	private int ballDeltaY = 3;
 
@@ -248,7 +250,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 																	// score
 
 			// draw the ball 123
-			ImageIcon imgBall = new ImageIcon("background/ball.png");
+			ImageIcon imgBall = new ImageIcon("background/apple.png");
  			g.drawImage(imgBall.getImage(), ballX, ballY, diameter, diameter, null);
 			//g.setColor(Color.RED);
 			//g.fillOval(ballX, ballY, diameter, diameter);
@@ -294,6 +296,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			if (e.getKeyChar() == 'p') {
 				showTitleScreen = false;
 				playing = true;
+				StartGame.play(null);
 			}
 		} else if (playing) {
 			if (e.getKeyCode() == KeyEvent.VK_UP) {

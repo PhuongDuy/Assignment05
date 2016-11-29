@@ -216,12 +216,17 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			ImageIcon imgbackground = new ImageIcon("background/hinh-anh-bong-da-3.jpg");
 			g.drawImage(imgbackground.getImage(), 0, 0, 500, 500, null);
 			g.setColor(Color.white);
-			g.setFont(new Font(Font.DIALOG, Font.BOLD, 36));
+			g.setFont(new Font(Font.SERIF , Font.BOLD, 42));
 			g.drawString("Pong Game", 130, 100);
 
 			// FIXME Wellcome message below show smaller than game title
-			g.setFont(new Font(Font.DIALOG, Font.BOLD, 28));
-			g.drawString("Press 'p' to play.", 130, 230);
+			g.setFont(new Font(Font.SERIF, Font.ROMAN_BASELINE, 28));
+			g.drawString("Press", 130, 230);
+			g.setFont(new Font(Font.SERIF, Font.ROMAN_BASELINE, 28));
+			g.drawString("to play", 250, 230);
+			g.setColor(Color.RED);
+			g.setFont(new Font(Font.SERIF, Font.ROMAN_BASELINE, 28));
+			g.drawString("'p'", 210, 230);
 		} else if (playing) {
 
 			/* Game is playing */
@@ -285,6 +290,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			g.setFont(new Font(Font.DIALOG, Font.BOLD, 18));
 			// TODO Draw a restart message
 			g.drawString("Press 'Space' to restart", 200, 400);
+			
 		}
 	}
 

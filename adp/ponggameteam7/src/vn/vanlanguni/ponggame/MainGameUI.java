@@ -1,9 +1,4 @@
-/*
- * 
- * 
- * 
- * 
- */
+
 package vn.vanlanguni.ponggame;
 
 import java.awt.BorderLayout;
@@ -14,7 +9,7 @@ import javax.swing.JFrame;
 
 /**
  * 
- * @author Duy Ho
+ * @author
  *
  */
 public class MainGameUI extends JFrame{

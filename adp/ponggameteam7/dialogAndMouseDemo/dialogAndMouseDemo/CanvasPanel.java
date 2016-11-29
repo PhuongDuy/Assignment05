@@ -20,7 +20,7 @@ public class CanvasPanel extends JPanel implements MouseMotionListener, MouseLis
 	Color buttonColor = Color.BLUE;
 	Rectangle rect;
 	Rectangle rect2;
-	ImageIcon btnIcon = new ImageIcon("images/button.png");
+	ImageIcon btnIcon = new ImageIcon("background/button.png");
 	boolean hover;
 	boolean pressed;
 	boolean dragged;

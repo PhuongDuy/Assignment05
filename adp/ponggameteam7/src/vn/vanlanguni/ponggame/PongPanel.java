@@ -20,6 +20,7 @@ package vn.vanlanguni.ponggame;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -87,6 +88,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 		Timer timer = new Timer(1000 / 60, this);
 		timer.start();
 	}
+
 
 	/** Implement actionPerformed */
 	public void actionPerformed(ActionEvent e) {

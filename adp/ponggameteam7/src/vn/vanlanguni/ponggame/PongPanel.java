@@ -270,7 +270,8 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 		} else if (gameOver) {
 
 			/* Show End game screen with winner name and score */
-
+			ImageIcon imgbground = new ImageIcon("background/hinh-anh-ban-phao-hoa-phao-bong-dep-nhat-4-khoahocthuvinet-2302.jpg");
+			g.drawImage(imgbground.getImage(), 0,0, 500, 500, null);
 			// Draw scores
 			// TODO Set Blue color
 			g.setColor(Color.blue);
@@ -279,17 +280,26 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			g.drawString(String.valueOf(playerTwoScore), 350, 100);
 
 			// Draw the winner name 
-			g.setFont(new Font(Font.DIALOG, Font.BOLD, 36));
+			g.setColor(Color.RED);
+			g.setFont(new Font(Font.SERIF, Font.BOLD, 50));
 			if (playerOneScore > playerTwoScore) {
-				g.drawString("Player 1 Wins!", 165, 200);
+				ImageIcon imgwin1 = new ImageIcon("background/win.png");
+				g.drawImage(imgwin1.getImage(), 100, 180, 300, 200, null);
+				g.drawString("Player 1", 165, 200);
 			} else {
-				g.drawString("Player 2 Wins!", 165, 200);
+				ImageIcon imgwin2 = new ImageIcon("background/win.png");
+				g.drawImage(imgwin2.getImage(), 100, 180, 300, 200, null);
+				g.drawString("Player 2", 165, 200);
 			}
 
 			// Draw Restart message
-			g.setFont(new Font(Font.DIALOG, Font.BOLD, 18));
+			g.setColor(Color.BLUE);
+			g.setFont(new Font(Font.SERIF, Font.BOLD, 21));
 			// TODO Draw a restart message
-			g.drawString("Press 'Space' to restart", 200, 400);
+			g.drawString("Press", 200, 400);
+			g.drawString("to restart", 325, 400);
+			g.setColor(Color.RED);
+			g.drawString("'Space'", 255, 400);
 			
 		}
 	}

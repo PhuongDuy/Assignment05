@@ -78,6 +78,12 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 	/** Player score, show on upper left and right. */
 	private int playerOneScore;
 	private int playerTwoScore;
+	//khai bao bien Numbertype
+	static int NumTypeBall=0;
+	ImageIcon imColorBall = new ImageIcon("./BallImage/ColorBall.png");
+	ImageIcon imTennis = new ImageIcon("./BallImage/Tenisball.png");
+	ImageIcon imBasketball = new ImageIcon("./BallImage/Basketball.png");
+	ImageIcon imPokemonball = new ImageIcon("./BallImage/Pokemonball.png");
 
 	/** Construct a PongPanel. */
 	public PongPanel() {
@@ -226,7 +232,8 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			g.drawString("to play", 250, 230);
 			g.setColor(Color.RED);
 			g.setFont(new Font(Font.SERIF, Font.ROMAN_BASELINE, 28));
-			g.drawString("'p'", 210, 230);
+			g.drawString("'P'", 210, 230);
+			g.drawString("press 'B' to choose the ball", 100, 280);
 		} else if (playing) {
 
 			/* Game is playing */
@@ -255,10 +262,24 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 																	// score
 
 			// draw the ball 123
-			ImageIcon imgBall = new ImageIcon("background/apple.png");
- 			g.drawImage(imgBall.getImage(), ballX, ballY, diameter, diameter, null);
+			//ImageIcon imgBall = new ImageIcon("background/apple.png");
+ 			//g.drawImage(imgBall.getImage(), ballX, ballY, diameter, diameter, null);
 			//g.setColor(Color.RED);
 			//g.fillOval(ballX, ballY, diameter, diameter);
+ 			g.setColor(Color.RED);
+			if (NumTypeBall == 0) {
+				g.drawImage(imColorBall.getImage(), ballX, ballY, diameter,
+						diameter, null);
+			} else if (NumTypeBall == 1) {
+				g.drawImage(imTennis.getImage(), ballX, ballY, diameter,
+						diameter, null);
+			} else if (NumTypeBall == 2) {
+				g.drawImage(imBasketball.getImage(), ballX, ballY, diameter,
+						diameter, null);
+			} else if (NumTypeBall == 3) {
+				g.drawImage(imPokemonball.getImage(), ballX, ballY, diameter,
+						diameter, null);
+			}
 
 			// draw the paddles
  			ImageIcon imgPaddle = new ImageIcon("background/000.png");
@@ -313,6 +334,9 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 				showTitleScreen = false;
 				playing = true;
 				StartGame.play(null);
+			}else if (e.getKeyChar() == 'b'||e.getKeyChar() == 'B') {
+				BallColorWindow mainWidow = new BallColorWindow();
+				mainWidow.setVisible(true);
 			}
 		} else if (playing) {
 			if (e.getKeyCode() == KeyEvent.VK_UP) {

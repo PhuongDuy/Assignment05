@@ -62,7 +62,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 	private int ballX = 240;
 	private int ballY = 240;
 	private int diameter = 30;
-	private int ballDeltaX = -1;
+	private int ballDeltaX = -2;
 	private int ballDeltaY = 3;
 
 	/** Player 1's paddle: position and size */
@@ -91,6 +91,11 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 	ImageIcon imPokemonball = new ImageIcon("./BallImage/Pokemonball.png");
 
 	/** Construct a PongPanel. */
+	int aNewNumber[] = new int[5];
+	int aNewNumber2[] = new int[5];
+	int aNewNumber3[] = new int[5];
+	int touchsign = 0;
+	
 	public PongPanel() {
 		setBackground(backgroundColor);
 		// listen to key presses
@@ -185,6 +190,18 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 					// FIXME Something wrong here
 					ballDeltaX *= -1;
 					hit.play(null);
+					if(touchsign==1){
+						if(aNewNumber3[0]==0){
+							ballDeltaY=ballDeltaY+2;
+							ballDeltaX=ballDeltaX-2;
+						}else if(aNewNumber3[0]==1){
+							ballDeltaY = ballDeltaY-1;
+						}else if(aNewNumber3[0]==2){
+							playerOneHeight=playerOneHeight-playerOneHeight*25/100;
+						}else if(aNewNumber3[0]==3){
+							playerOneHeight=playerOneHeight+playerOneHeight*25/100;
+						}
+					}
 				}
 			}
 
@@ -210,6 +227,18 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 					// FIXME Something wrong here
 					ballDeltaX *= -1;
 					hit.play(null);
+					if(touchsign==1){
+						if(aNewNumber3[0]==0){
+							ballDeltaY=ballDeltaY+2;
+							ballDeltaX=ballDeltaX-2;
+						}else if(aNewNumber3[0]==1){
+							ballDeltaY = ballDeltaY-1;
+						}else if(aNewNumber3[0]==2){
+							playerTwoHeight=playerOneHeight-playerTwoHeight*25/100;
+						}else if(aNewNumber3[0]==3){
+							playerTwoHeight=playerOneHeight+playerTwoHeight*25/100;
+						}
+					}
 				}
 			}
 

@@ -15,12 +15,12 @@ import javax.swing.JRadioButton;
  */
 
 /**
- * @author Binh Tran - T151266
+ * @author
  *	
  * 
  */
 public class BallColorWindow extends JDialog{
-	JRadioButton optColorBall = new JRadioButton("ColorBall");
+	JRadioButton optfootball = new JRadioButton("FootBall");
 	JRadioButton optTennisBall = new JRadioButton("Tennis");
 	JRadioButton optBasketball = new JRadioButton("Basketball");
 	JRadioButton optPokemonball = new JRadioButton("PokemonBall");
@@ -28,7 +28,7 @@ public class BallColorWindow extends JDialog{
 	JLabel lblBasket = new JLabel();
 	JLabel lblTennis = new JLabel();
 	JLabel lblPokemon = new JLabel();
-	ImageIcon imColorBall = new ImageIcon("./BallImage/ColorBall.png");
+	ImageIcon imfootball = new ImageIcon("./background/bong.png");
 	ImageIcon imTennis = new ImageIcon("./BallImage/Tenisball.png");
 	ImageIcon imBasketball = new ImageIcon("./BallImage/Basketball.png");
 	ImageIcon imPokemonball = new ImageIcon("./BallImage/Pokemonball.png");
@@ -41,7 +41,7 @@ public class BallColorWindow extends JDialog{
 		setLocationRelativeTo(null);
 		setModal(true);
 		
-		add(optColorBall);
+		add(optfootball);
 		add(optTennisBall);
 		add(optBasketball);
 		add(optPokemonball);
@@ -51,17 +51,17 @@ public class BallColorWindow extends JDialog{
 		add(lblTennis);
 		add(btnChoose);
 		
-		lblColorBall.setIcon(imColorBall);
+		lblColorBall.setIcon(imfootball);
 		lblTennis.setIcon(imTennis);
 		lblBasket.setIcon(imBasketball);
 		lblPokemon.setIcon(imPokemonball);
-		btnGroup.add(optColorBall);
+		btnGroup.add(optfootball);
 		btnGroup.add(optTennisBall);
 		btnGroup.add(optBasketball);
 		btnGroup.add(optPokemonball);
 		
 		lblColorBall.setBounds(10, 10, 50, 50);
-		optColorBall.setBounds(60, 20, 100, 30);
+		optfootball.setBounds(60, 20, 100, 30);
 		
 		
 		lblTennis.setBounds(10, 70, 50, 50);
@@ -76,14 +76,14 @@ public class BallColorWindow extends JDialog{
 		btnChoose.setBounds(350, 250, 100, 30);
 		
 		//default option
-		optColorBall.setSelected(true);
+		optfootball.setSelected(true);
 		
 		btnChoose.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if(optColorBall.isSelected() == true)
+				if(optfootball.isSelected() == true)
 				{
 					PongPanel.NumTypeBall = 0;
 				}else if(optTennisBall.isSelected() == true){

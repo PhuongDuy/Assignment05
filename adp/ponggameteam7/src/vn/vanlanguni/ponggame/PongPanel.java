@@ -98,11 +98,12 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 	private int playerTwoScore;
 	// khai bao bien Numbertype
 	static int NumTypeBall = 0;
-	ImageIcon imColorBall = new ImageIcon("./BallImage/ColorBall.png");
+	ImageIcon imfootball = new ImageIcon("./background/ball.png");
 	ImageIcon imTennis = new ImageIcon("./BallImage/Tenisball.png");
 	ImageIcon imBasketball = new ImageIcon("./BallImage/Basketball.png");
 	ImageIcon imPokemonball = new ImageIcon("./BallImage/Pokemonball.png");
-
+	ImageIcon imbgin = new ImageIcon("./background/tmp790302971165409281.jpg");
+	
 	/** Construct a PongPanel. */
 	int aNewNumber[] = new int[5];
 	int aNewNumber2[] = new int[5];
@@ -306,7 +307,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			add(lblsetting);
 			add(box);
 			setLayout(null);
-			g.setFont(new Font(Font.DIALOG, Font.BOLD, 27));
+			g.setFont(new Font(Font.SERIF, Font.BOLD, 27));
 			g.setColor(Color.blue);
 			g.drawString("Press 'P' to Accept", 120, 300);
 			lblsetting.setBounds(x + 60, y - 10, w + 250, h + 30);
@@ -338,6 +339,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			g.drawLine(playerTwoLeft, 0, playerTwoLeft, getHeight());
 
 			// draw the scores
+			g.drawImage(imbgin.getImage(), 0, 0, 500, 500, null);
 			g.setFont(new Font(Font.DIALOG, Font.BOLD, 36));
 			g.setColor(Color.BLUE);
 			g.drawString(String.valueOf(playerOneScore), 100, 100); // Player 1
@@ -353,7 +355,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener {
 			// g.fillOval(ballX, ballY, diameter, diameter);
 			g.setColor(Color.RED);
 			if (NumTypeBall == 0) {
-				g.drawImage(imColorBall.getImage(), ballX, ballY, diameter, diameter, null);
+				g.drawImage(imfootball.getImage(), ballX, ballY, diameter, diameter, null);
 			} else if (NumTypeBall == 1) {
 				g.drawImage(imTennis.getImage(), ballX, ballY, diameter, diameter, null);
 			} else if (NumTypeBall == 2) {
